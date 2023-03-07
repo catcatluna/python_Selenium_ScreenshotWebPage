@@ -9,7 +9,20 @@ options.chrome_executable_path = r"C:\Users\guagu\PycharmProjects\pythonProject_
 
 # 建立 Driver 物件實體
 driver = webdriver.Chrome(options = options)
+
+# 將網頁視窗放到最大化
+driver.maximize_window()
+
+# 目標網頁
 driver.get("https://www.google.com/")
+driver.save_screenshot("google網頁.png")
+driver.get("https://www.yahoo.com/")
+
+# 網頁截圖
+driver.save_screenshot("yahoo網頁.png")
+
+# 完成任務關閉瀏覽器
+driver.close()
 
 # 因為瀏覽器可能會在完成指令後自動關閉 有兩種做法延長關閉時間
 # 1 設定TIMER
@@ -22,11 +35,3 @@ driver.get("https://www.google.com/")
 # 2.
 # while(True):
 #      pass
-
-# 網頁截圖
-driver.save_screenshot("google網頁.png")
-driver.get("https://www.yahoo.com/")
-driver.save_screenshot("yahoo網頁.png")
-
-# 完成任務關閉瀏覽器
-driver.close()
