@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 # 設立chrome driver的路徑
 options = Options()
 # 檔案如果放在C槽Users中 可以在路徑之前放上r 因為\U 在unicode中後面需要接數字, 系統判斷會產生錯誤訊息
+# 請將此路徑換成你的本機路徑
 options.chrome_executable_path = r"C:\Users\guagu\PycharmProjects\pythonProject_Selenium1\chromedriver.exe"
 
 # 建立 Driver 物件實體
@@ -15,10 +16,11 @@ driver.maximize_window()
 
 # 目標網頁
 driver.get("https://www.google.com/")
-driver.save_screenshot("google網頁.png")
-driver.get("https://www.yahoo.com/")
-
 # 網頁截圖
+driver.save_screenshot("google網頁.png")
+# 目標網頁2
+driver.get("https://www.yahoo.com/")
+# 截圖
 driver.save_screenshot("yahoo網頁.png")
 
 # 完成任務關閉瀏覽器
